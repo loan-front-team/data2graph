@@ -10,9 +10,7 @@ data2graph provides capabilities for creation and deployment of reports, charts,
 
 ```bash
 # install all this dependencies.
-
-npm i yarn --save-dev
-yarn install
+npm i
 
 # development, default port: 8080
 npm run dev
