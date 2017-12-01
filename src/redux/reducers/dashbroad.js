@@ -1,17 +1,17 @@
 import {
-	SOURCEURLCONFIG
+	GODASHBROAD
 } from '../constants/ActionTypes'
 
 const initialState = {
-	url: ''
+	number: 0
 }
 
-export default function sourceUrl(state = initialState, action) {
+export default function dashbroad(state = initialState, action) {
 	switch (action.type) {
-		case SOURCEURLCONFIG:
+		case GODASHBROAD:
 			return {
 				...state,
-				url: action.payload.url
+				number: action.payload.number
 			}
 		default:
 			return state

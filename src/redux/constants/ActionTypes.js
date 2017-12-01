@@ -1,3 +1,3 @@
-export const INCREMENT = 'INCREMENT';
-
 export const SOURCEURLCONFIG = 'SOURCEURLCONFIG';
+
+export const GODASHBROAD = 'GODASHBROAD';

@@ -1,13 +1,10 @@
-import Loadable from 'react-loadable'
 import MainView from 'views/MainView'
-
-const AsyncView = Loadable({
-  // if you have your own loading component,
-  // you should consider add it here
-  loading: () => null
-})
+import DashBroadView from 'views/DashBroadView'
 
 export default [{
-  path: '/',
-  component: MainView
+	path: '/',
+	component: MainView
+}, {
+	path: '/dashbroad',
+	component: DashBroadView
 }]

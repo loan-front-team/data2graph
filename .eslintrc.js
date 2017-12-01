@@ -15,10 +15,10 @@ module.exports = {
     browser: true,
   },
   extends: [
-      // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
-      'standard',
-      // https://github.com/feross/eslint-config-standard-react
-      'standard-react'
+    // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
+    'standard',
+    // https://github.com/feross/eslint-config-standard-react
+    'standard-react'
   ],
   // https://github.com/yannickcr/eslint-plugin-react
   plugins: [
@@ -37,18 +37,22 @@ module.exports = {
     // 允许分号
     'semi': [0],
     // 忽略缩进配置
-    'indent' : 0,
-    'no-tabs' : 0,
-    'no-unused-vars': [2, { 
+    'indent': 0,
+    'no-tabs': 0,
+    'no-unused-vars': [2, {
       // 允许声明未使用变量
       "vars": "local",
       // 参数不检查
-      "args": "none" 
+      "args": "none"
     }],
     //空行最多不能超过100行
-    "no-multiple-empty-lines": [0, {"max": 100}],
+    "no-multiple-empty-lines": [0, {
+      "max": 100
+    }],
     //关闭禁止混用tab和空格
     "no-mixed-spaces-and-tabs": [0],
     'space-before-function-paren': [0],
+    "eol-last": 0, //文件以单一的换行符结束
+    "handle-callback-err": 0
   }
 }

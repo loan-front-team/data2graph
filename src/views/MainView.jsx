@@ -1,18 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router'
+
+import SourceUrl from 'components/SourceUrl'
 import './MainView.css'
 
 const MainView = ({ children }) => (
   <div className='main-view'>
     <div className='view'>
+      <SourceUrl />
       {children}
     </div>
   </div>
 )
 
 MainView.prototype.propTypes = {
-  children: PropTypes.element
+  children: PropTypes.node
 }
 
 export default MainView

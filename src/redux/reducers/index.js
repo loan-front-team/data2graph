@@ -1,10 +1,11 @@
 import {
 	combineReducers
 } from 'redux'
-import counter from './counter'
+
 import SourceUrl from './sourceUrl'
+import DashBroad from './dashbroad'
 
 export default combineReducers({
-	counter,
-	SourceUrl
+	SourceUrl,
+	DashBroad
 })
