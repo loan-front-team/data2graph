@@ -36,7 +36,7 @@ class SourceUrl extends Component {
   	  sourceDispatch
     } = this.props;
 
-    if (this.state.url !== '') {
+    if ((this.state.url).trim() !== '') {
        sourceDispatch(this.state.url);
     } else {
       e.preventDefault();
@@ -58,7 +58,7 @@ class SourceUrl extends Component {
 }
 
 SourceUrl.propTypes = {
-  sourceDispatch: PropTypes.func
+  sourceDispatch: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
