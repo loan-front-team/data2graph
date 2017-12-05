@@ -52,7 +52,7 @@ module.exports = {
     //关闭禁止混用tab和空格
     "no-mixed-spaces-and-tabs": [0],
     'space-before-function-paren': [0],
-    "eol-last": 0, //文件以单一的换行符结束
+    //"eol-last": 0, //文件以单一的换行符结束
     "handle-callback-err": 0
   }
 }
