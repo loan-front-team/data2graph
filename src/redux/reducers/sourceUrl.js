@@ -1,6 +1,4 @@
-import {
-	SOURCEURLCONFIG
-} from '../constants/ActionTypes'
+import { SOURCEURLCONFIG } from '../constants/ActionTypes'
 
 const initialState = {
 	url: ''

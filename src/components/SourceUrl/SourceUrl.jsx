@@ -1,14 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router'
-import {
-  Button,
-	Input,
-	Row,
-	Col
-} from 'antd'
-import {
-	bindActionCreators
-} from 'redux'
+import { Button, Input, Row, Col } from 'antd'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 

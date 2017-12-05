@@ -1,6 +1,4 @@
-import {
-	GODASHBROAD
-} from '../constants/ActionTypes'
+import { GODASHBROAD } from '../constants/ActionTypes'
 
 const initialState = {
 	number: 0

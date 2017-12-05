@@ -1,8 +1,6 @@
 import configureStore from './configureStore'
 import rootsaga from '../sagas'
-import {
-	sagaMiddleware
-} from './middlewares'
+import { sagaMiddleware } from './middlewares'
 
 const store = configureStore()
 

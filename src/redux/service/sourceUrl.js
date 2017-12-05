@@ -1,8 +1,5 @@
 import request from '../../utils/request';
-export function fetch({
-	url,
-	method
-}) {
+export function fetch({ url, method }) {
 	return request(`${url}\\${method}`, {
 		method: 'GET',
 		mode: 'cors'

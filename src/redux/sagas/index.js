@@ -1,6 +1,4 @@
-import {
-	all
-} from 'redux-saga/effects';
+import { all } from 'redux-saga/effects';
 
 import sourceconfigWatch from './sourceUrl'
 

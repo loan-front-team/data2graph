@@ -1,14 +1,7 @@
-import {
-  createStore,
-  compose
-} from 'redux'
+import { createStore, compose } from 'redux'
 import rootReducer from '../reducers/index'
-import {
-  middlewares
-} from './middlewares'
-import {
-  persistState
-} from 'redux-devtools'
+import { middlewares } from './middlewares'
+import { persistState } from 'redux-devtools'
 import DevTools from 'components/DevTools'
 
 const enhancer = compose(
