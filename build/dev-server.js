@@ -36,11 +36,13 @@ const hotMiddleware = require('webpack-hot-middleware')(compiler, {
 // enable gzip in development
 app.use(require('compression')());
 
-// proxy api requests
-Object.keys(proxyTable).forEach(function (context) {
+//proxy api requests
+Object.keys(proxyTable).forEach(function(context) {
     let options = proxyTable[context];
     if (typeof options === 'string') {
-        options = { target: options };
+        options = {
+            target: options
+        };
     }
     app.use(proxyMiddleware(options.filter || context, options));
 });
@@ -62,12 +64,12 @@ app.use(staticPath, express.static('./static'));
 const uri = 'http://localhost:' + port;
 const ip = 'http://' + require('ip').address() + ':' + port;
 
-devMiddleware.waitUntilValid(function () {
+devMiddleware.waitUntilValid(function() {
     console.log(chalk.cyan('- Local: ' + uri + '\n'));
     console.log(chalk.cyan('- On your Network: ' + ip + '\n'));
 });
 
-module.exports = app.listen(port, function (err) {
+module.exports = app.listen(port, function(err) {
     if (err) {
         console.log(err);
         return;

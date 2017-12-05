@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV === 'production') {
 	module.exports = () => null
 } else {
-	module.exports = require('./SourceUrl')
+	module.exports = require('./DashBroad')
 }
