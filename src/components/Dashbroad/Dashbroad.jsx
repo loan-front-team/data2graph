@@ -2,49 +2,66 @@ import React, { Component } from 'react'
 import { Carousel } from 'antd'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import Charts from './../Charts/Charts';
+
+import '../Charts/Charts.css';
 
 class DashBroad extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      number: 0
+      chartsResourceUrl: []
     };
   }
 
   componentDidMounted() {
     this.setState(
       {
-        number: this.props.number
+        chartsResourceUrl: this.props.chartsResourceUrl
       });
   }
 
   render() {
     const {
-      number
+      chartsResourceUrl
     } = this.props;
 
-    var list = (length) => {
+    var list = (chartsResourceUrl) => {
+      console.log(chartsResourceUrl)
           var res = [];
-          for (var i = 0; i < length; i++) {
-            res.push(<div key={i}>hello react</div>)
+          let childWarp = [];
+          for (var i = 0; i < chartsResourceUrl.length; i++) {
+            childWarp.push(
+              <div className='warp'key={i}>
+                <Charts />
+              </div>
+            )
+            if ((i + 1) % 4 === 0 || (i + 1) === chartsResourceUrl.length) {
+              res.push(
+                <div>
+                  {childWarp}
+                </div>
+              );
+              childWarp = [];
+            }
           }
-          return res
+          return res;
         }
     return (
       <Carousel verticle>
-        {list(number)}
+        {list(chartsResourceUrl)}
       </Carousel>
     );
   }
 }
 
 DashBroad.propTypes = {
-  number: PropTypes.number
+  chartsResourceUrl: PropTypes.array
 }
 
 const mapStateToProps = state => {
   return {
-    number: state.DashBroad.number
+    chartsResourceUrl: state.DashBroad.chartsResourceUrl
   }
 }
 

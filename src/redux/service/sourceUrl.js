@@ -13,7 +13,7 @@ export function fetch({ url, method }) {
 	}, function(err) {
 		console.log('获取数据失败！');
 		const data = {
-			number: 1
+			chartsResourceUrl: null
 		};
 		const ret = {
 			data,

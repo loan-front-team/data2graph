@@ -17,14 +17,14 @@ function* getSourceData({
 	try {
 		const {
 			data: {
-				number
+				chartsResourceUrl
 			}
 		} = yield call(sourceconfigService.fetch, payload);
 
 		yield put({
 			type: types.GODASHBROAD,
 			payload: {
-				number: number
+				chartsResourceUrl: chartsResourceUrl
 			}
 		});
 	} catch (err) {

@@ -1,3 +1,5 @@
+
 module.exports = {
-	number: 2
+   // number: 12,
+	chartsResourceUrl: ['/api/dataUrl', '/api/dataUrl1']
 };
