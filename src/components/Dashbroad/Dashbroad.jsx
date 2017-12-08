@@ -32,7 +32,7 @@ class DashBroad extends Component {
           let childWarp = [];
           for (var i = 0; i < chartsResourceUrl.length; i++) {
             childWarp.push(
-              <div className='warp'key={i}>
+              <div className='warp' key={i}>
                 <Charts />
               </div>
             )
