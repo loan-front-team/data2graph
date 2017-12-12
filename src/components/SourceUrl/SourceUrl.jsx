@@ -28,6 +28,7 @@ class SourceUrl extends Component {
   	const {
   	  sourceDispatch
     } = this.props;
+  	// console.info(this.props);
 
     if ((this.state.url).trim() !== '') {
        sourceDispatch(this.state.url);

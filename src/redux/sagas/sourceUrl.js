@@ -24,7 +24,7 @@ function* getSourceData({
 		yield put({
 			type: types.GODASHBROAD,
 			payload: {
-				chartsResourceUrl: chartsResourceUrl
+        chartsResourceUrl: chartsResourceUrl
 			}
 		});
 	} catch (err) {
