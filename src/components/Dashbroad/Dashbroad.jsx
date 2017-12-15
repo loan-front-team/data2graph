@@ -1,97 +1,104 @@
 import React, { Component } from 'react'
-// import { Carousel } from 'antd'
-import ReactSwipe from 'react-swipe'
+import { Carousel } from 'antd'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import Charts from './../Charts/Charts';
+import BarCharts from './../Charts/BarCharts'
+import LineCharts from './../Charts/LineCharts'
+import PieCharts from './../Charts/PieCharts'
 
-import '../Charts/Charts.css';
-import './DashBroad.css';
+import '../Charts/Charts.css'
+import './DashBroad.css'
 
 class DashBroad extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      chartsResourceUrl: [],
-      index: 0
+      index: 0,
+      chartsResourceUrl: []
     };
   }
-
   componentDidMount() {
-    this.setState(
-      {
-        chartsResourceUrl: this.props.chartsResourceUrl
-      });
-    // console.log(this.props.chartsResourceUrl)
+    // console.info('Did', this.props);
+    const { url } = this.props;
+    const method = 'query';
+    fetch(`${url}\\${method}`).then((response) => {
+      if (response.status !== 200) {
+        throw new Error('Fail to get response with status' + response.status);
+      }
+      response.json().then((responseJson) => {
+        this.setState({chartsResourceUrl: responseJson.chartsResourceUrl})
+        // console.info(responseJson);
+      }).catch((error) => {
+        this.setState({ chartsResourceUrl: [] })
+      })
+    }).catch((error) => {
+      this.setState({ chartsResourceUrl: [] })
+    });
   }
-
+  renderChartsType(item) {
+    let charts = [];
+    switch (item.type) {
+      case 'A': charts.push(<BarCharts dataGraph={item.dataGraph} cols={item.cols} />); break;
+      case 'B': charts.push(<LineCharts dataGraph={item.dataGraph} cols={item.cols} />); break;
+      case 'C': charts.push(<PieCharts dataGraph={item.dataGraph} cols={item.cols} />); break;
+      default : break;
+    }
+    return charts;
+  }
   render() {
-    const {
-      chartsResourceUrl
-    } = this.props;
-    console.log(this.props);
-    if (chartsResourceUrl.length !== 0) {
-      var list = (chartsResourceUrl) => {
-        // console.log(chartsResourceUrl);
-        var res = [];
-        let childWarp = [];
-        for (var i = 0; i < chartsResourceUrl.length; i++) {
-          childWarp.push(
-            <div key={i} className='warp'>
-              <Charts dataGraph={chartsResourceUrl[i].dataGraph} type={chartsResourceUrl[i].type} cols={chartsResourceUrl[i].cols} />
-            </div>
-          )
-          if ((i + 1) % 4 === 0 || (i + 1) === chartsResourceUrl.length) {
-            res.push(
-              <div key={i}>
-                {childWarp}
-              </div>
-            );
-            childWarp = [];
-          }
-        }
-        return res;
-      }
+    // console.log(this.props);
+    const pageSize = 4;
+    const array = this.state.chartsResourceUrl;
+    // console.log('chartsResourceUrl', this.state.chartsResourceUrl);
+    // const array = [1, 2, 3, 4, 5, 6, 7];
+    const pageNo = Math.ceil(array.length / pageSize);
+    let list = [];
+    for (let i = pageNo; i > 0; i--) {
+      list[i - 1] = [...pagination(i, pageSize, array)]
     }
-    // console.info(list(chartsResourceUrl));
-    // var length = Math.ceil(chartsResourceUrl.length / 4);
-    // var liOption = [];
-    // for (let i = 0; i < length; i++) {
-    //   liOption.push(
-    //     <li className={this.state.index === 0 ? 'selected' : ''}>{i + 1}</li>
-    //   )
-    // }
-    let opt = {
-      auto: 1000,
-      callback: (index) => {
-        // console.log(index);
-        this.setState({
-          index: index
-        });
-      }
-
-    }
-    // {list(chartsResourceUrl)}
+    // <BarCharts dataGraph={item.dataGraph} cols={item.cols} />
     return (
-      <div>
-        <ReactSwipe className='carousel' swipeOptions={opt}>
-          {list(chartsResourceUrl)}
-        </ReactSwipe>
-      </div>
+      <Carousel autoplay className='marginTop'>
+        {
+          list.map((val, index) => {
+            return (
+              <div key={index}>{
+                val.map((item, sum) => {
+                  return (
+                    <div key={sum} className='warp'>
+                      {this.renderChartsType(item)}
+                    </div>
+                  )
+                })
+              }
+              </div>
+            )
+          })
+        }
+      </Carousel>
     );
   }
 }
 
 DashBroad.propTypes = {
-  chartsResourceUrl: PropTypes.array
+  url: PropTypes.string
 }
 
-const mapStateToProps = state => {
-  return {
-    chartsResourceUrl: state.DashBroad.chartsResourceUrl
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     chartsResourceUrl: state.DashBroad.chartsResourceUrl
+//   }
+// }
+
+const mapStateToProps = state => ({
+  url: state.SourceUrl.url
+})
 
 export default connect(
 	mapStateToProps
 )(DashBroad);
+
+function pagination(pageNo, pageSize, array) {
+  let offset = (pageNo - 1) * pageSize;
+  return (offset + pageSize >= array.length) ? array.slice(offset, array.length) : array.slice(offset, offset + pageSize);
+}

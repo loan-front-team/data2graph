@@ -14,6 +14,7 @@ function* getSourceData({
 	// 使用 yield 语句（可阻塞、非阻塞）
 	// 可以发起其它 action 的 dispatch，不管是改变 store 的 action 还是 异步请求 action
 	// 使用到的 effects：put, call, select, fork 等
+
 	try {
 		const {
 			data: {

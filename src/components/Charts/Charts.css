@@ -1,9 +1,8 @@
 .warp{
-    width: 500px;
-    height: 300px;
+    width: 550px;
+    height: 320px;
     display: inline-block;
     margin-right: 50px;
+    margin-bottom: 10px;
 }
-/*.slick-cloned {*/
-  /*display: none !important;*/
-/*}*/
+
