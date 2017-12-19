@@ -5,6 +5,8 @@ import PropTypes from 'prop-types'
 import BarCharts from './../Charts/BarCharts'
 import LineCharts from './../Charts/LineCharts'
 import PieCharts from './../Charts/PieCharts'
+import AreaCharts from './../Charts/AreaCharts'
+// import DiscCharts from './../Charts/DiscCharts'
 
 import '../Charts/Charts.css'
 import './DashBroad.css'
@@ -38,9 +40,11 @@ class DashBroad extends Component {
   renderChartsType(item) {
     let charts = [];
     switch (item.type) {
-      case 'A': charts.push(<BarCharts dataGraph={item.dataGraph} cols={item.cols} />); break;
-      case 'B': charts.push(<LineCharts dataGraph={item.dataGraph} cols={item.cols} />); break;
-      case 'C': charts.push(<PieCharts dataGraph={item.dataGraph} cols={item.cols} />); break;
+      case 'A': charts.push(<BarCharts dataGraph={item.dataGraph} />); break;
+      case 'B': charts.push(<LineCharts dataGraph={item.dataGraph} />); break;
+      case 'C': charts.push(<PieCharts dataGraph={item.dataGraph} />); break;
+      case 'D': charts.push(<AreaCharts dataGraph={item.dataGraph} />); break;
+      // case 'E': charts.push(<DiscCharts dataGraph={item.dataGraph} />); break;
       default : break;
     }
     return charts;
@@ -65,7 +69,7 @@ class DashBroad extends Component {
               <div key={index}>{
                 val.map((item, sum) => {
                   return (
-                    <div key={sum} className='warp'>
+                    <div key={sum * 0.1} className='warp'>
                       {this.renderChartsType(item)}
                     </div>
                   )

@@ -4,90 +4,80 @@ module.exports = {
 	chartsResourceUrl: [
     {
       type: 'A',
-      cols: {
-        sold: { alias: '销售量1' },
-        genre: { alias: '游戏种类1' }
-      },
       dataGraph: [
-        { genre: 'Audi', sold: 275, income: 2300 },
-        { genre: 'BMW', sold: 120, income: 982 },
-        { genre: 'Kia', sold: 350, income: 5271 },
-        { genre: 'Other', sold: 150, income: 3710 }
+        { genre: 'Audi', sold: 275, income: 200 },
+        { genre: 'BMW', sold: 120, income: 98 },
+        { genre: 'Kia', sold: 350, income: 521 },
+        { genre: 'Other', sold: 150, income: 370 }
       ]
     },
     {
       type: 'B',
-      cols: {
-        sold: { alias: '销售量2' },
-        genre: { alias: '游戏种类2' }
-      },
       dataGraph: [
-        { genre: 'Audi', sold: 25, income: 230 },
+        { genre: 'Audi', sold: 25, income: 20 },
         { genre: 'Benz', sold: 15, income: 67 },
-        { genre: 'Kia', sold: 30, income: 571 },
-        { genre: 'Other', sold: 10, income: 310 }
+        { genre: 'Kia', sold: 30, income: 51 },
+        { genre: 'Other', sold: 10, income: 30 }
       ]
     },
     {
       type: 'C',
-      cols: {
-        sold: { alias: '销售量3' },
-        genre: { alias: '游戏种类3' }
-      },
       dataGraph: [
-        { genre: 'Audi', sold: 27, income: 230 },
-        { genre: 'Benz', sold: 11, income: 66 },
-        { genre: 'BMW', sold: 12, income: 98 },
-        { genre: 'Kia', sold: 35, income: 527 },
-        { genre: 'Other', sold: 15, income: 371 }
+        { item: '得到', count: 13 },
+        { item: '东方的', count: 16 },
+        { item: '不太认识', count: 47 },
+        { item: '如果我', count: 15 },
+        { item: '额发吧额', count: 9 }
       ]
     },
     {
-      type: 'A',
-      cols: {
-        sold: { alias: '销售量4' },
-        genre: { alias: '游戏种类4' }
-      },
-      dataGraph: [
-        { genre: 'Audi', sold: 27, income: 230 },
-        { genre: 'Benz', sold: 11, income: 66 },
-        { genre: 'BMW', sold: 12, income: 98 },
-        { genre: 'Kia', sold: 35, income: 527 },
-        { genre: 'Other', sold: 15, income: 371 }
+      type: 'D',
+      dataGraph:  [
+        {country: 'Asia', year: '1750', value: 502},
+        {country: 'Asia', year: '1800', value: 635},
+        {country: 'Asia', year: '1850', value: 809},
+        {country: 'Asia', year: '1900', value: 5268},
+        {country: 'Asia', year: '1950', value: 4400},
+        {country: 'Asia', year: '1999', value: 3634},
+        {country: 'Asia', year: '2050', value: 947},
+        {country: 'Africa', year: '1750', value: 106},
+        {country: 'Africa', year: '1800', value: 107},
+        {country: 'Africa', year: '1850', value: 111},
+        {country: 'Africa', year: '1900', value: 1766},
+        {country: 'Africa', year: '1950', value: 221},
+        {country: 'Africa', year: '1999', value: 767},
+        {country: 'Africa', year: '2050', value: 133},
+        {country: 'Europe', year: '1750', value: 163},
+        {country: 'Europe', year: '1800', value: 203},
+        {country: 'Europe', year: '1850', value: 276},
+        {country: 'Europe', year: '1900', value: 628},
+        {country: 'Europe', year: '1950', value: 547},
+        {country: 'Europe', year: '1999', value: 729},
+        {country: 'Europe', year: '2050', value: 408},
+        {country: 'Oceania', year: '1750', value: 200},
+        {country: 'Oceania', year: '1800', value: 200},
+        {country: 'Oceania', year: '1850', value: 200},
+        {country: 'Oceania', year: '1900', value: 460},
+        {country: 'Oceania', year: '1950', value: 230},
+        {country: 'Oceania', year: '1999', value: 300},
+        {country: 'Oceania', year: '2050', value: 300},
       ]
     },
     {
       type: 'C',
-      cols: {
-        sold: { alias: '销售量5' },
-        genre: { alias: '游戏种类5' }
-      },
       dataGraph: [
-        { genre: 'Benz', sold: 11, income: 66 },
-        { genre: 'BMW', sold: 12, income: 98 },
-        { genre: 'Kia', sold: 35, income: 527 },
-        { genre: 'Other', sold: 15, income: 371 }
+        { item: '得到', count: 43 },
+        { item: '东的', count: 17 },
+        { item: '不认识', count: 19 },
+        { item: '如我', count: 11 },
+        { item: '额发额', count: 10 }
       ]
     },
     {
-      type: 'A',
-      cols: {
-        sold: { alias: '销售量6' },
-        genre: { alias: '游戏种类6' }
-      },
-      dataGraph: [
-        { genre: 'Audi', sold: 27, income: 230 },
-        { genre: 'Benz', sold: 11, income: 66 },
-        { genre: 'BMW', sold: 12, income: 98 },
-        { genre: 'Kia', sold: 35, income: 527 }
-      ]
+      type: 'E'
     },
     {
       type: 'B',
-      cols: {
-        sold: { alias: '销售量7' },
-        genre: { alias: '游戏种类7' }
-      },
       dataGraph: [
         { genre: 'Audi', sold: 27, income: 230 },
         { genre: 'Benz', sold: 11, income: 66 },

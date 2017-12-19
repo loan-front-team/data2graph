@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { Chart, Geom, Axis, Tooltip, Legend } from 'bizcharts';
+import React, { Component } from 'react'
+import { Chart, Geom, Axis, Tooltip, Legend } from 'bizcharts'
 import PropTypes from 'prop-types'
+import DataSet from '@antv/data-set'
 
 import './Charts.css';
 
@@ -12,26 +13,41 @@ class BarCharts extends Component {
 
     render() {
       const {
-        dataGraph,
-        cols
+        dataGraph
       } = this.props;
       // console.info('+++++++', this.props);
 
+      const ds = new DataSet();
+      const dv = ds.createView().source(dataGraph);
+      let keys = [];
+      for (let p in dataGraph[0]) {
+        if (dataGraph[0].hasOwnProperty(p)) {
+          keys.push(p);
+        }
+      }
+      const name = keys[0];
+      keys = keys.slice(1);
+      dv.transform({
+        type: 'fold',
+        fields: keys, // 展开字段集
+        key: 'x', // key字段
+        value: 'y' // value字段
+      });
+
       return (
-        <Chart width={550} height={320} data={dataGraph} scale={cols}>
-          <Axis name='genre' />
-          <Axis name='sold' />
+        <Chart width={550} height={320} data={dv} >
+          <Axis name='x' />
+          <Axis name='y' />
           <Legend position='bottom' dy={-50} />
           <Tooltip offset={100} crosshairs={{type: 'y'}} />
-          <Geom type='interval' position='genre*sold' color='genre' />
+          <Geom type='intervalStack' position='x*y' color={name} />
         </Chart>
       )
     }
 }
 
 BarCharts.propTypes = {
-  dataGraph: PropTypes.array,
-  cols: PropTypes.object
+  dataGraph: PropTypes.array
 }
 
 export default BarCharts;
