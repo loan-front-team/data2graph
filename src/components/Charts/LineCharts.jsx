@@ -6,16 +6,10 @@ import DataSet from '@antv/data-set'
 import './Charts.css';
 
 class LineCharts extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   console.info('charts++++', this.props);
-  // }
-
   render() {
     const {
       dataGraph
     } = this.props;
-    // console.info('+++++++', dataGraph);
 
     const ds = new DataSet();
     const dv = ds.createView().source(dataGraph);
@@ -28,8 +22,6 @@ class LineCharts extends Component {
     }
     const x = keys[0];
     keys = keys.slice(1);
-    // console.info(x);
-    // console.info(keys);
     dv.transform({
       type: 'fold',
       fields: keys, // 展开字段集

@@ -5,16 +5,10 @@ import PropTypes from 'prop-types'
 import './Charts.css';
 
 class AreaCharts extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   console.info('charts++++', this.props);
-  // }
-
   render() {
     const {
       dataGraph
     } = this.props;
-    // console.info('+++++++', this.props);
     let keys = [];
     for (let p in dataGraph[0]) {
       if (dataGraph[0].hasOwnProperty(p)) {

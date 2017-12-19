@@ -6,16 +6,11 @@ import DataSet from '@antv/data-set'
 import './Charts.css';
 
 class PieCharts extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   console.info('charts++++', this.props);
-  // }
 
   render() {
     const {
       dataGraph
     } = this.props;
-    // console.info('+++++++', this.props);
     let keys = [];
     for (let p in dataGraph[0]) {
       if (dataGraph[0].hasOwnProperty(p)) {
@@ -24,8 +19,6 @@ class PieCharts extends Component {
     }
     const item = keys[0].toString();
     const count = keys[1].toString();
-    // console.info(item);
-    // console.info(count);
     const { DataView } = DataSet;
     const dv = new DataView();
     dv.source(dataGraph).transform({

@@ -20,7 +20,6 @@ class DashBroad extends Component {
     };
   }
   componentDidMount() {
-    // console.info('Did', this.props);
     const { url } = this.props;
     const method = 'query';
     fetch(`${url}\\${method}`).then((response) => {

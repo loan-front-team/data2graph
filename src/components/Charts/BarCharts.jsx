@@ -6,17 +6,10 @@ import DataSet from '@antv/data-set'
 import './Charts.css';
 
 class BarCharts extends Component {
-    // constructor(props) {
-    //   super(props);
-    //   console.info('charts++++', this.props);
-    // }
-
     render() {
       const {
         dataGraph
       } = this.props;
-      // console.info('+++++++', this.props);
-
       const ds = new DataSet();
       const dv = ds.createView().source(dataGraph);
       let keys = [];
@@ -33,7 +26,6 @@ class BarCharts extends Component {
         key: 'x', // key字段
         value: 'y' // value字段
       });
-
       return (
         <Chart width={550} height={320} data={dv} >
           <Axis name='x' />
