@@ -74,7 +74,10 @@ module.exports = {
       ]
     },
     {
-      type: 'E'
+      type: 'E',
+      dataGraph: [
+        { maxValue: 9, minValue: 0, relValue: 7.7 }
+      ]
     },
     {
       type: 'B',

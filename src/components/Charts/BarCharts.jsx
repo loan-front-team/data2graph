@@ -28,9 +28,9 @@ class BarCharts extends Component {
       });
       return (
         <Chart width={550} height={320} data={dv} >
-          <Axis name='x' />
-          <Axis name='y' />
-          <Legend position='bottom' dy={-50} />
+          <Axis name='x' label={{textStyle: {fill: '#fff'}}} />
+          <Axis name='y' label={{textStyle: {fill: '#fff'}}} />
+          <Legend position='bottom' dy={-50} textStyle={{fill: '#fff'}} />
           <Tooltip offset={100} crosshairs={{type: 'y'}} />
           <Geom type='intervalStack' position='x*y' color={name} />
         </Chart>

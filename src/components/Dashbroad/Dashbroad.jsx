@@ -6,7 +6,8 @@ import BarCharts from './../Charts/BarCharts'
 import LineCharts from './../Charts/LineCharts'
 import PieCharts from './../Charts/PieCharts'
 import AreaCharts from './../Charts/AreaCharts'
-// import DiscCharts from './../Charts/DiscCharts'
+import DiscCharts from './../Charts/DiscCharts'
+import MapCharts from './../Charts/MapCharts'
 
 import '../Charts/Charts.css'
 import './DashBroad.css'
@@ -43,7 +44,8 @@ class DashBroad extends Component {
       case 'B': charts.push(<LineCharts dataGraph={item.dataGraph} />); break;
       case 'C': charts.push(<PieCharts dataGraph={item.dataGraph} />); break;
       case 'D': charts.push(<AreaCharts dataGraph={item.dataGraph} />); break;
-      // case 'E': charts.push(<DiscCharts dataGraph={item.dataGraph} />); break;
+      case 'E': charts.push(<DiscCharts dataGraph={item.dataGraph} />); break;
+      case 'F': charts.push(<MapCharts dataGraph={item.dataGraph} />); break;
       default : break;
     }
     return charts;

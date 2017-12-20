@@ -22,9 +22,9 @@ class AreaCharts extends Component {
 
     return (
       <Chart width={550} height={320} data={dataGraph} forceFit>
-        <Axis name={year} />
-        <Axis name={value} />
-        <Legend />
+        <Axis name={year} label={{textStyle: {fill: '#fff'}}} />
+        <Axis name={value} label={{textStyle: {fill: '#fff'}}} />
+        <Legend textStyle={{fill: '#fff'}} />
         <Tooltip crosshairs={{type: 'line'}} />
         <Geom type='area' position={position} color={item} />
         <Geom type='line' position={position} size={2} color={item} />

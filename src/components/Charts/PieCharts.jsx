@@ -6,7 +6,6 @@ import DataSet from '@antv/data-set'
 import './Charts.css';
 
 class PieCharts extends Component {
-
   render() {
     const {
       dataGraph
@@ -40,8 +39,8 @@ class PieCharts extends Component {
     return (
       <Chart width={550} height={320} data={dv} scale={cols} padding={[ 20, 100, 20, 0 ]} forceFit>
         <Coord type='theta' radius={0.75} />
-        <Axis name='percent' />
-        <Legend position='right' offsetX={-30} />
+        <Axis name='percent' label={{textStyle: {fill: '#fff'}}} />
+        <Legend position='right' offsetX={-30} textStyle={{fill: '#fff'}} />
         <Tooltip
           showTitle={false}
         />
@@ -58,7 +57,7 @@ class PieCharts extends Component {
           }]}
           style={{lineWidth: 1, stroke: '#fff'}}
         >
-          <Label content='percent' formatter={(val, item) => {
+          <Label content='percent' textStyle={{fill: '#fff'}} formatter={(val, item) => {
               return item.point.item + ':' + val
             }
           } />

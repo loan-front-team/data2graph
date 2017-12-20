@@ -35,10 +35,10 @@ class LineCharts extends Component {
     }
     return (
       <Chart width={550} height={320} data={dv} scale={cols} forceFit>
-        <Axis name={x} />
-        <Axis name='y' />
+        <Axis name={x} label={{textStyle: {fill: '#fff'}}} />
+        <Axis name='y' label={{textStyle: {fill: '#fff'}}} />
         <Tooltip crosshairs={{type: 'y'}} />
-        <Legend />
+        <Legend textStyle={{fill: '#fff'}} />
         <Geom type='line' position={axis} size={2} color={'x'} shape={'smooth'} />
         <Geom type='point' position={axis} size={4} color={'x'} shape={'circle'} style={{stroke: '#fff', lineWidth: 1}} />
       </Chart>
