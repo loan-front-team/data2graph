@@ -7,7 +7,7 @@ import LineCharts from './../Charts/LineCharts'
 import PieCharts from './../Charts/PieCharts'
 import AreaCharts from './../Charts/AreaCharts'
 import DiscCharts from './../Charts/DiscCharts'
-import MapCharts from './../Charts/MapCharts'
+// import MapCharts from './../Charts/MapCharts'
 
 import '../Charts/Charts.css'
 import './DashBroad.css'
@@ -45,7 +45,7 @@ class DashBroad extends Component {
       case 'C': charts.push(<PieCharts dataGraph={item.dataGraph} />); break;
       case 'D': charts.push(<AreaCharts dataGraph={item.dataGraph} />); break;
       case 'E': charts.push(<DiscCharts dataGraph={item.dataGraph} />); break;
-      case 'F': charts.push(<MapCharts dataGraph={item.dataGraph} />); break;
+      // case 'F': charts.push(<MapCharts dataGraph={item.dataGraph} />); break;
       default : break;
     }
     return charts;
@@ -68,9 +68,9 @@ class DashBroad extends Component {
           list.map((val, index) => {
             return (
               <div key={index}>{
-                val.map((item, sum) => {
+                val.map((item, index) => {
                   return (
-                    <div key={sum * 0.1} className='warp'>
+                    <div key={index * 0.1} className='warp'>
                       {this.renderChartsType(item)}
                     </div>
                   )

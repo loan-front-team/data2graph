@@ -23,11 +23,11 @@ module.exports = {
     {
       type: 'C',
       dataGraph: [
-        { item: '得到', count: 13 },
-        { item: '东方的', count: 16 },
-        { item: '不太认识', count: 47 },
-        { item: '如果我', count: 15 },
-        { item: '额发吧额', count: 9 }
+        { item: '事件一', count: 13 },
+        { item: '事件二', count: 16 },
+        { item: '事件三', count: 47 },
+        { item: '事件四', count: 15 },
+        { item: '事件五', count: 9 }
       ]
     },
     {
@@ -66,17 +66,17 @@ module.exports = {
     {
       type: 'C',
       dataGraph: [
-        { item: '得到', count: 43 },
-        { item: '东的', count: 17 },
-        { item: '不认识', count: 19 },
-        { item: '如我', count: 11 },
-        { item: '额发额', count: 10 }
+        { item: '事件一', count: 43 },
+        { item: '事件二', count: 16 },
+        { item: '事件三', count: 18 },
+        { item: '事件四', count: 14 },
+        { item: '事件五', count: 9 }
       ]
     },
     {
       type: 'E',
       dataGraph: [
-        { maxValue: 9, minValue: 0, relValue: 7.7 }
+        { maxValue: 9, minValue: 0, value: 2.8 }
       ]
     },
     {
@@ -88,49 +88,5 @@ module.exports = {
         { genre: 'Other', sold: 15, income: 371 }
       ]
     }
-    // ,
-    // {
-    //   type: 'interval',
-    //   cols: {
-    //     sold: { alias: '销售量8' },
-    //     genre: { alias: '游戏种类8' }
-    //   },
-    //   dataGraph: [
-    //     { genre: 'Audi', sold: 27, income: 230 },
-    //     { genre: 'Benz', sold: 11, income: 66 },
-    //     { genre: 'BMW', sold: 12, income: 98 },
-    //     { genre: 'Kia', sold: 35, income: 527 },
-    //     { genre: 'Other', sold: 15, income: 371 }
-    //   ]
-    // },
-    // {
-    //   type: 'interval',
-    //   cols: {
-    //     sold: { alias: '销售量9' },
-    //     genre: { alias: '游戏种类9' }
-    //   },
-    //   dataGraph: [
-    //     { genre: 'Audi', sold: 27, income: 230 },
-    //     { genre: 'Benz', sold: 11, income: 66 },
-    //     { genre: 'BMW', sold: 12, income: 98 },
-    //     { genre: 'Kia', sold: 35, income: 527 },
-    //     { genre: 'Other', sold: 15, income: 371 }
-    //   ]
-    // }
-    // ,
-    // {
-    //   type: 'interval',
-    //   cols: {
-    //     sold: { alias: '销售量10' },
-    //     genre: { alias: '游戏种类10' }
-    //   },
-    //   dataGraph: [
-    //     { genre: 'Audi', sold: 27, income: 230 },
-    //     { genre: 'Benz', sold: 11, income: 66 },
-    //     { genre: 'BMW', sold: 12, income: 98 },
-    //     { genre: 'Kia', sold: 35, income: 527 },
-    //     { genre: 'Other', sold: 15, income: 371 }
-    //   ]
-    // }
   ]
 };

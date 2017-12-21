@@ -12,7 +12,10 @@ class DiscCharts extends Component {
     } = this.props;
     const maxValue = dataGraph[0].maxValue;
     const minValue = dataGraph[0].minValue;
-    const val = dataGraph[0].relValue;
+    const val = dataGraph[0].value;
+    const data = [
+      {value: val}
+    ]
     const lineWidth = 25;
     const first = minValue + (maxValue - minValue) / 3;
     const second = minValue + ((maxValue - minValue) / 3) * 2;
@@ -34,7 +37,7 @@ class DiscCharts extends Component {
             x1: center.x,
             y1: center.y,
             x2: point.x,
-            y2: point.y - 100,
+            y2: point.y - 20,
             stroke: cfg.color,
             lineWidth: 5,
             lineCap: 'round'
@@ -44,7 +47,7 @@ class DiscCharts extends Component {
           attrs: {
             x: center.x,
             y: center.y,
-            r: 30,
+            r: 12,
             stroke: cfg.color,
             lineWidth: 4.5,
             fill: '#fff'
@@ -62,7 +65,7 @@ class DiscCharts extends Component {
       }
     }
     return (
-      <Chart width={550} height={320} data={dataGraph} scale={cols} padding={[ 0, 0, 100, 0 ]} forceFit>
+      <Chart width={550} height={320} data={data} scale={cols} padding={[ 0, 0, 100, 0 ]} forceFit>
         <Coord type='polar' startAngle={-9 / 8 * Math.PI} endAngle={1 / 8 * Math.PI} radius={0.75} />
         <Axis name='value' zIndex={2} label={{
           offset: -20,
@@ -118,3 +121,4 @@ DiscCharts.propTypes = {
 }
 
 export default DiscCharts;
+
