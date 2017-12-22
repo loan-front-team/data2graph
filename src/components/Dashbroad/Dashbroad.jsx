@@ -29,7 +29,6 @@ class DashBroad extends Component {
       }
       response.json().then((responseJson) => {
         this.setState({chartsResourceUrl: responseJson.chartsResourceUrl})
-        // console.info(responseJson);
       }).catch((error) => {
         this.setState({ chartsResourceUrl: [] })
       })
@@ -51,11 +50,8 @@ class DashBroad extends Component {
     return charts;
   }
   render() {
-    // console.log(this.props);
     const pageSize = 4;
     const array = this.state.chartsResourceUrl;
-    // console.log('chartsResourceUrl', this.state.chartsResourceUrl);
-    // const array = [1, 2, 3, 4, 5, 6, 7];
     const pageNo = Math.ceil(array.length / pageSize);
     let list = [];
     for (let i = pageNo; i > 0; i--) {
