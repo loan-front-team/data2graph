@@ -39,11 +39,11 @@ class DashBroad extends Component {
   renderChartsType(item) {
     let charts = [];
     switch (item.type) {
-      case 'A': charts.push(<BarCharts dataGraph={item.dataGraph} />); break;
-      case 'B': charts.push(<LineCharts dataGraph={item.dataGraph} />); break;
-      case 'C': charts.push(<PieCharts dataGraph={item.dataGraph} />); break;
-      case 'D': charts.push(<AreaCharts dataGraph={item.dataGraph} />); break;
-      case 'E': charts.push(<DiscCharts dataGraph={item.dataGraph} />); break;
+      case 'A': charts.push(<BarCharts key={Math.random()} dataGraph={item.dataGraph} />); break;
+      case 'B': charts.push(<LineCharts key={Math.random()} dataGraph={item.dataGraph} />); break;
+      case 'C': charts.push(<PieCharts key={Math.random()} dataGraph={item.dataGraph} />); break;
+      case 'D': charts.push(<AreaCharts key={Math.random()} dataGraph={item.dataGraph} />); break;
+      case 'E': charts.push(<DiscCharts key={Math.random()} dataGraph={item.dataGraph} />); break;
       // case 'F': charts.push(<MapCharts dataGraph={item.dataGraph} />); break;
       default : break;
     }
