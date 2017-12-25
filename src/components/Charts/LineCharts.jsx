@@ -11,9 +11,6 @@ class LineCharts extends Component {
       dataGraph
     } = this.props;
 
-    const ds = new DataSet();
-    const dv = ds.createView().source(dataGraph);
-
     let keys = [];
     for (let p in dataGraph[0]) {
       if (dataGraph[0].hasOwnProperty(p)) {
@@ -22,6 +19,9 @@ class LineCharts extends Component {
     }
     const x = keys[0];
     keys = keys.slice(1);
+
+    const ds = new DataSet();
+    const dv = ds.createView().source(dataGraph);
     dv.transform({
       type: 'fold',
       fields: keys, // 展开字段集
