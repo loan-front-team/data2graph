@@ -1,7 +1,7 @@
 import { GODASHBROAD } from '../constants/ActionTypes'
 
 const initialState = {
-	number: 0
+  chartsResourceUrl: []
 }
 
 export default function dashbroad(state = initialState, action) {
@@ -9,7 +9,7 @@ export default function dashbroad(state = initialState, action) {
 		case GODASHBROAD:
 			return {
 				...state,
-				number: action.payload.number
+        chartsResourceUrl: action.payload.chartsResourceUrl
 			}
 		default:
 			return state
