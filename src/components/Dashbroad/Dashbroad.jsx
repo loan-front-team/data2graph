@@ -10,12 +10,34 @@ class DashBroad extends Component {
       number: 0
     };
   }
-
-  componentDidMounted() {
-    this.setState(
-      {
-        number: this.props.number
-      });
+  componentDidMount() {
+    const { url } = this.props;
+    const method = 'query';
+    fetch(`${url}\\${method}`).then((response) => {
+      if (response.status !== 200) {
+        throw new Error('Fail to get response with status' + response.status);
+      }
+      response.json().then((responseJson) => {
+        this.setState({chartsResourceUrl: responseJson.chartsResourceUrl})
+      }).catch((error) => {
+        this.setState({ chartsResourceUrl: [] })
+      })
+    }).catch((error) => {
+      this.setState({ chartsResourceUrl: [] })
+    });
+  }
+  renderChartsType(item) {
+    let charts = [];
+    switch (item.type) {
+      case 'A': charts.push(<BarCharts key={Math.random()} dataGraph={item.dataGraph} />); break;
+      case 'B': charts.push(<LineCharts key={Math.random()} dataGraph={item.dataGraph} />); break;
+      case 'C': charts.push(<PieCharts key={Math.random()} dataGraph={item.dataGraph} />); break;
+      case 'D': charts.push(<AreaCharts key={Math.random()} dataGraph={item.dataGraph} />); break;
+      case 'E': charts.push(<DiscCharts key={Math.random()} dataGraph={item.dataGraph} />); break;
+      // case 'F': charts.push(<MapCharts dataGraph={item.dataGraph} />); break;
+      default : break;
+    }
+    return charts;
   }
 
   render() {
