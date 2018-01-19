@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import { Carousel } from 'antd'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import BarCharts from '../Charts/BarCharts'
+import LineCharts from '../Charts/LineCharts'
+import DiscCharts from '../Charts/DiscCharts'
+import AreaCharts from '../Charts/AreaCharts'
+import PieCharts from '../Charts/PieCharts'
 
 class DashBroad extends Component {
   constructor(props) {
@@ -61,7 +66,8 @@ class DashBroad extends Component {
 }
 
 DashBroad.propTypes = {
-  number: PropTypes.number
+  number: PropTypes.number,
+  url: PropTypes.string
 }
 
 const mapStateToProps = state => {
